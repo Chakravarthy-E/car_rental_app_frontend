@@ -9,6 +9,7 @@ import Loader, { Bars, ColorRing, Oval } from "react-loader-spinner";
 
 
 const AddCar = () => {
+  //
   const [name, setname] = useState("");
   const [cartype, setcartype] = useState("");
   const [model, setmodel] = useState("");
