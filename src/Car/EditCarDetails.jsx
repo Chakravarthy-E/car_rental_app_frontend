@@ -113,7 +113,7 @@ const PaymentDetails = ({ currentDate, currentTime, places, setPlaces }) => {
     try {
       console.log(obj);
 
-      let editplaces = await axios.post("http://localhost:5000/editcar", obj,{headers} );
+      let editplaces = await axios.post("https://car-rental-backend-7pjq.onrender.com/editcar", obj,{headers} );
 
       if (editplaces.status === 201) {
         alert("successfully edited");
@@ -173,7 +173,7 @@ const EditCarDetails = () => {
         if(verifieduser){
 
         try{
-          const value = await axios.get("http://localhost:5000/Userauth",{ headers })
+          const value = await axios.get("https://car-rental-backend-7pjq.onrender.com/Userauth",{ headers })
           console.log(value);
           if(value.status == 200){
   

@@ -25,7 +25,7 @@ function HelloAdmin() {
 
   const [car_data, setcar_data] = useState([]);
 
-  const [show,setshow] = useState(false);
+ 
  
   const navigate = useNavigate();
 
@@ -52,10 +52,9 @@ function HelloAdmin() {
       //if(verifiedadmin){
       try {
 
-        const admincar = await axios.get("http://localhost:5000/getadmincar", { headers });
+        const admincar = await axios.get("https://car-rental-backend-7pjq.onrender.com/getadmincar", { headers });
         console.log(admincar.data)
         setcar_data([...admincar.data])
-        setshow(true);
 
       } 
       catch (error) {
@@ -79,7 +78,7 @@ function HelloAdmin() {
 
 }
 
-  return show && <div style={{backgroundColor:"#27374D"}}>
+  return  <div style={{backgroundColor:"#27374D"}}>
       <Nav />
       <div style={{ marginBottom: "20px", marginLeft: "30px" }}>
         <p className="text-dark"></p>

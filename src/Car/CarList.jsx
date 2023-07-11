@@ -30,7 +30,7 @@ const CarList = () => {
       
       if(verifieduser){
       try{
-        const value = await axios.get("http://localhost:5000/getallcar",{ headers })
+        const value = await axios.get("https://car-rental-backend-7pjq.onrender.com/getallcar",{ headers })
         console.log(value);
         setCar(value.data);
       }

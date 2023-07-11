@@ -7,7 +7,7 @@ export default function CloudinaryImage({ carname, carmodel, adminid }) {
   const loadImages = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/images",
+        "https://car-rental-backend-7pjq.onrender.com/api/images",
         {
           params: {
             name: carname,

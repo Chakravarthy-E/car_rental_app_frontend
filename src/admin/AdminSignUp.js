@@ -3,6 +3,8 @@ import React from 'react'
 import { useState } from 'react';
 import axios from "axios";
 import AdminLogin from "./AdminLogin"
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 
 
@@ -56,10 +58,10 @@ const AdminSignUp = () => {
     else{
 
     try {
-      const data = await axios.post("http://localhost:5000/adminsignup", { email, password, Name, contact }, { withCredentials: true });
+      const data = await axios.post("https://car-rental-backend-7pjq.onrender.com/adminsignup", { email, password, Name, contact }, { withCredentials: true });
       console.log(data);
       setsignup(true)
-      seterror("Registered Sucessfully")
+      toast.success("Registered Sucessfully")
       setTimeout(() => {
         seterror("");
         setemail("");
@@ -72,7 +74,7 @@ const AdminSignUp = () => {
     }
     catch (err) {
       console.log("error from backend", err,err.response.data.errors.email);
-      seterror(err.response.data.errors.email);
+      toast.error(err.response.data.errors.email);
       // seterror(err.response.data.erros.password);
     }
     }
@@ -80,6 +82,7 @@ const AdminSignUp = () => {
   }
   return (
     <div>
+    <ToastContainer position='top-center'/>
       {signup ? <AdminLogin/> :
       <form   >
         {!error?<h4 className='text-light'> Register your Admin Account </h4>

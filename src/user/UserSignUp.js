@@ -34,7 +34,7 @@ const UserSignUp = () => {
     } else {
       try {
         const data = await axios.post(
-          "http://localhost:5000/usersignup",
+          "https://car-rental-backend-7pjq.onrender.com/usersignup",
           { email, password },
           { withCredentials: true }
         );
